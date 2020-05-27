@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".Docentes">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/nomusuario"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="25dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/fb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        app:fab_expandDirection="down"
+        app:fab_addButtonColorNormal="@color/white"
+        app:fab_labelStyle="@drawable/cerrar_sesion"
+        app:fab_labelsPosition="right">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="Cerrar sesión"
+            app:fab_icon="@drawable/cerrar_sesion" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="Mensajes"
+            app:fab_icon="@drawable/chat"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="Calificaciones"
+            app:fab_icon="@drawable/calificaciones"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="Cursos"
+            app:fab_icon="@drawable/cursos"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="Tareas"
+            app:fab_icon="@drawable/tareas"/>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="Centro Educativo"
+            app:fab_icon="@drawable/school"
+            />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/white"
+            app:fab_title="Perfil"
+            app:fab_icon="@drawable/ic_person_outline_black_24dp"
+            />
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

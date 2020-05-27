@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EdicionTareas"
+    android:background="@color/fondo">
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="salirediciontareas"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/volver"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="99dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="256dp"
+        android:layout_marginTop="612dp"
+        android:onClick="añadirtarea"
+        android:text="AÑADIR"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="612dp"
+        android:text="MODIFICAR"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nombre_tarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="228dp"
+        android:ems="10"
+        android:hint="Nombre (Obligatorio)"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/instrucciones"
+        android:layout_width="273dp"
+        android:layout_height="137dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="292dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Instrucciones"
+        android:inputType="textMultiLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="140dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="516dp"
+        android:hint="Rúbrica"
+        android:onClick="crearub"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fecha_entrega"
+        android:layout_width="281dp"
+        android:layout_height="28dp"
+        android:layout_marginLeft="72dp"
+        android:onClick="fecha"
+        android:layout_marginTop="440dp"
+        android:hint="Selecciona la fecha de entrega:"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

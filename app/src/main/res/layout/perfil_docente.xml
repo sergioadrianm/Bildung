@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A8FF5900"
+    tools:context=".PerfilDocente">
+
+    <EditText
+        android:id="@+id/contrasenaper"
+        android:layout_width="270dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="376dp"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/emailper"
+        android:layout_width="270dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="472dp"
+        android:ems="10"
+        android:hint="Correo electrónico"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/usuarioper"
+        android:layout_width="270dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="280dp"
+        android:ems="10"
+        android:hint="Nombre de usuario"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="salirperfil"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/volver"
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="99dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="270dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="576dp"
+        android:onClick="actualizardoc"
+        android:text="ACTUALIZAR"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

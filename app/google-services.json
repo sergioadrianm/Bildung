@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "49929667084",
+    "firebase_url": "https://bildung-a8efa.firebaseio.com",
+    "project_id": "bildung-a8efa",
+    "storage_bucket": "bildung-a8efa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49929667084:android:925e9354966abdac1e2429",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49929667084-uqejjmt475cq7f89ll6kmcueufhdp1u9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4hLeExsCQUOTGqCKlE2GpyxsxZ7Zmvzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49929667084-uqejjmt475cq7f89ll6kmcueufhdp1u9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

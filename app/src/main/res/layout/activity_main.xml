@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A8FF5900"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="201dp"
+        android:layout_height="185dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/b" />
+
+    <EditText
+        android:id="@+id/contrasenasesion"
+        android:layout_width="270dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="376dp"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/usuariosesion"
+        android:layout_width="270dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="288dp"
+        android:ems="10"
+        android:hint="Nombre de usuario"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/iniciosesion"
+        android:layout_width="270dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="468dp"
+        android:text="Iniciar sesión"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/login1"
+        android:layout_width="270dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="552dp"
+        android:text="REGISTRARSE"
+        android:textSize="24sp"
+        android:onClick="pasaregistro"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

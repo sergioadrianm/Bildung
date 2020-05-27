@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".VisionRubricas"></activity>
+        <activity android:name=".EdicionTareas" />
+        <activity android:name=".TutoresLegales2" />
+        <activity android:name=".TutoresLegales" />
+        <activity android:name=".CursosChatAlumnos" />
+        <activity android:name=".CursosChat" />
+        <activity android:name=".CursosTareasAlumnos" />
+        <activity android:name=".TareasAlumnos" />
+        <activity android:name=".TareasDocente" />
+        <activity android:name=".CalificacionesAlumno" />
+        <activity android:name=".CalificacionesDocente" />
+        <activity android:name=".MensajesAlumnos" />
+        <activity android:name=".MensajesDocente" />
+        <activity android:name=".PerfilAlumno" />
+        <activity android:name=".ModificarCursos" />
+        <activity android:name=".DatosAlumno" />
+        <activity android:name=".EliminarAlumnos" />
+        <activity android:name=".EliminarCursos" />
+        <activity android:name=".AccesoAlumnos" />
+        <activity android:name=".EdicionAlumnos" />
+        <activity android:name=".Alumnos" />
+        <activity android:name=".EdicionCursos" />
+        <activity android:name=".CursosDocente" />
+        <activity android:name=".CentroEducativo" />
+        <activity android:name=".PerfilDocente" />
+        <activity android:name=".Docentes" />
+        <activity android:name=".Registro" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
