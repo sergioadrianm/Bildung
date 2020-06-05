@@ -32,17 +32,18 @@ public class MensajesAlumnos extends AppCompatActivity {
     ImageButton enviarm;
     TextView mensaje;
     private DatabaseReference root;
-    private  String temp_key;
-    private String chat_msg,chat_user_name;
+    private String temp_key;
+    private String chat_msg, chat_user_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mensajes_alumnos);
-        b  = (EditText)findViewById(R.id.editText25);
-        enviarm  = (ImageButton) findViewById(R.id.imageButton1);
+        b = (EditText) findViewById(R.id.editText25);
+        enviarm = (ImageButton) findViewById(R.id.imageButton1);
         actionbar = getSupportActionBar();
         actionbar.setTitle(nombre_cursoo);
-        mensaje  = (TextView) findViewById(R.id.textView40);
+        mensaje = (TextView) findViewById(R.id.textView40);
         root = FirebaseDatabase.getInstance().getReference().child(nombre_cursoo);
 
         root.addChildEventListener(new ChildEventListener() {
@@ -72,29 +73,33 @@ public class MensajesAlumnos extends AppCompatActivity {
             }
         });
     }
+
     public void enviar_mensaje(View view) {
-        Map<String,Object> map= new HashMap<String,Object>();
+        Map<String, Object> map = new HashMap<String, Object>();
         temp_key = root.push().getKey();
         root.updateChildren(map);
 
-        DatabaseReference message_root =root.child(temp_key);
-        Map<String,Object> map1= new HashMap<String,Object>();
-        map1.put("nombre",nombre_alumno);
-        map1.put("msg",b.getText().toString());
+        DatabaseReference message_root = root.child(temp_key);
+        Map<String, Object> map1 = new HashMap<String, Object>();
+        map1.put("nombre", nombre_alumno);
+        map1.put("msg", b.getText().toString());
         message_root.updateChildren(map1);
+        b.setText("");
 
     }
+
     private void append_chat_conversation(DataSnapshot dataSnapshot) {
 
         Iterator i = dataSnapshot.getChildren().iterator();
 
-        while (i.hasNext()){
-            chat_msg = (String) ((DataSnapshot)i.next()).getValue();
-            chat_user_name = (String) ((DataSnapshot)i.next()).getValue();
+        while (i.hasNext()) {
+            chat_msg = (String) ((DataSnapshot) i.next()).getValue();
+            chat_user_name = (String) ((DataSnapshot) i.next()).getValue();
 
-            mensaje.append(chat_user_name + " : "+chat_msg+ " \n\n");
+            mensaje.append(chat_user_name + " : " + chat_msg + " \n\n");
         }
     }
+
     public void salirchata(View view) {
 
         Intent intent = new Intent(MensajesAlumnos.this, CursosChatAlumnos.class);

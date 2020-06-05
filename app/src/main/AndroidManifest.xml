@@ -3,6 +3,10 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,39 +15,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VisionRubricas"></activity>
-        <activity android:name=".EdicionTareas" />
-        <activity android:name=".TutoresLegales2" />
-        <activity android:name=".TutoresLegales" />
+        <activity android:name=".AsignarNota" />
+        <activity android:name=".CriterioCalificacion" />
+        <activity android:name=".TareasIndividuales" />
+        <activity android:name=".AlumnosCalificaciones" />
+        <activity android:name=".VerTareas" />
+        <activity android:name=".ControlTareas" />
+        <activity android:name="com.example.adaptadorlistview.AdaptadorListViewCursoAlumno" />
+        <activity android:name="com.example.operacionesdocente.EdicionCriterios" />
+        <activity android:name="com.example.operacionesdocente.EliminarCriterio" />
+        <activity android:name="com.example.operacionesdocente.EliminarTareas" />
+        <activity android:name="com.example.operacionesdocente.ModificarRubrica" />
+        <activity android:name="com.example.operacionesdocente.VisionCriterios" />
+        <activity android:name="com.example.operacionesdocente.EliminarRubricas" />
+        <activity android:name="com.example.adaptadorlistview.AdaptadorListViewCurso" />
+        <activity android:name="com.example.operacionesdocente.EdicionRubrica" />
+        <activity android:name="com.example.operacionesdocente.VisionRubricas" />
+        <activity android:name="com.example.operacionesalumnos.TutoresLegales2" />
+        <activity android:name="com.example.operacionesalumnos.TutoresLegales" />
         <activity android:name=".CursosChatAlumnos" />
         <activity android:name=".CursosChat" />
-        <activity android:name=".CursosTareasAlumnos" />
-        <activity android:name=".TareasAlumnos" />
-        <activity android:name=".TareasDocente" />
-        <activity android:name=".CalificacionesAlumno" />
+        <activity android:name="com.example.operacionesalumnos.TareasAlumnos" />
+        <activity android:name="com.example.operacionesdocente.TareasDocente" />
         <activity android:name=".CalificacionesDocente" />
         <activity android:name=".MensajesAlumnos" />
         <activity android:name=".MensajesDocente" />
-        <activity android:name=".PerfilAlumno" />
-        <activity android:name=".ModificarCursos" />
-        <activity android:name=".DatosAlumno" />
-        <activity android:name=".EliminarAlumnos" />
-        <activity android:name=".EliminarCursos" />
+        <activity android:name=".CursosTareasAlumnos" />
+        <activity android:name="com.example.operacionesalumnos.PerfilAlumno" />
+        <activity android:name="com.example.operacionesdocente.ModificarCursos" />
+        <activity android:name="com.example.operacionesdocente.DatosAlumno" />
+        <activity android:name="com.example.operacionesalumnos.EliminarAlumnos" />
+        <activity android:name="com.example.operacionesdocente.EliminarCursos" />
         <activity android:name=".AccesoAlumnos" />
-        <activity android:name=".EdicionAlumnos" />
+        <activity android:name="com.example.operacionesdocente.EdicionAlumnos" />
         <activity android:name=".Alumnos" />
-        <activity android:name=".EdicionCursos" />
+        <activity android:name="com.example.operacionesdocente.EdicionTareas" />
+        <activity android:name="com.example.operacionesdocente.EdicionCursos" />
         <activity android:name=".CursosDocente" />
-        <activity android:name=".CentroEducativo" />
-        <activity android:name=".PerfilDocente" />
+        <activity android:name="com.example.operacionesdocente.CentroEducativo" />
+        <activity android:name="com.example.operacionesdocente.PerfilDocente" />
         <activity android:name=".Docentes" />
         <activity android:name=".Registro" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
     </application>
 

@@ -11,14 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
+        <TextView
             android:id="@+id/nomusuario"
             android:layout_width="130dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="170dp"
             android:layout_marginTop="25dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:textSize="24sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>

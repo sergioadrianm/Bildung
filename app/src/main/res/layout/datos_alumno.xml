@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".DatosAlumno">
+    tools:context="com.example.operacionesdocente.DatosAlumno">
     <ImageButton
+        android:id="@+id/foto_alumno2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="salirmodificacionalumnos"
@@ -28,7 +29,8 @@
         android:hint="Nombre"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/formato"/>
 
     <EditText
         android:id="@+id/primer_apellido_alumno"
@@ -95,12 +97,15 @@
         android:layout_height="85dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="512dp"
-        android:ems="10"
-        android:gravity="start|top"
         android:hint="           Observaciones"
         android:inputType="textMultiLine"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:ems="10"
+        android:gravity="start|top"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:singleLine="false"/>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -123,4 +128,19 @@
         android:onClick="tutores_legales"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="152dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        android:onClick="adjuntarImagen2"
+        app:srcCompat="@drawable/photo"
+        tools:ignore="VectorDrawableCompat"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,14 +12,19 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.hash.sha;
+import com.example.componentead.AdminSQLiteOpenHelper;
+
+import java.math.BigInteger;
 
 
 public class Registro extends AppCompatActivity {
     AdminSQLiteOpenHelper db;
-ImageButton b1;
-Button registrarse;
-EditText usuario,email,contrasena;
-Button login2;
+    ImageButton b1;
+    Button registrarse;
+    EditText usuario, email, contrasena, c2;
+    Button login2, v;
+    int cont = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +44,11 @@ Button login2;
         email = (EditText) findViewById(R.id.email);
         contrasena = (EditText) findViewById(R.id.contrasena);
         login2 = (Button) findViewById(R.id.login2);
+        c2 = (EditText) findViewById(R.id.contrasena2);
 
-}
+    }
 
     public void Registrar(View view) {
-
 
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
@@ -51,13 +56,24 @@ Button login2;
         String usuarios = usuario.getText().toString();
         String contrasenas = contrasena.getText().toString();
         String emails = email.getText().toString();
+        String con2 = c2.getText().toString();
         Integer rol = 1;
 
-        if (!usuarios.isEmpty() && !contrasenas.isEmpty() && !emails.isEmpty()) {
+        if (!usuarios.isEmpty() && !contrasenas.isEmpty() && !con2.isEmpty() && !emails.isEmpty()) {
+            if (contrasenas.equals(con2)) {
 
+                byte[] inputData = contrasenas.getBytes();
+                byte[] outputData = new byte[0];
+                try {
+                    outputData = sha.encryptSHA(inputData, "SHA-1");
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+                BigInteger a = new BigInteger(1, outputData);
                 ContentValues registro = new ContentValues();
                 registro.put("NOMBRE", usuarios);
-                registro.put("CONTRASENA", contrasenas);
+                registro.put("CONTRASENA", a.toString(16));
                 registro.put("EMAIL", emails);
                 registro.put("ROL_ID", rol);
 
@@ -68,17 +84,20 @@ Button login2;
                 usuario.setText("");
                 contrasena.setText("");
                 email.setText("");
-
+                c2.setText("");
 
                 Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-            Intent reg = new Intent(this, MainActivity.class);
-            startActivity(reg);
+                Intent reg = new Intent(this, MainActivity.class);
+                startActivity(reg);
 
+            } else {
+                Toast.makeText(this, "Las contraseñas deben coincidir", Toast.LENGTH_SHORT).show();
+                contrasena.setText("");
+                c2.setText("");
             }
-         else {
+
+        } else {
             Toast.makeText(this, "Debe llenar todos los campos", Toast.LENGTH_SHORT).show();
         }
-
     }
-
 }

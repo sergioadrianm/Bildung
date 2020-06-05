@@ -7,21 +7,24 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.example.componentead.AdminSQLiteOpenHelper;
+import com.example.operacionesalumnos.PerfilAlumno;
+import com.example.operacionesalumnos.TareasAlumnos;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 
 import static com.example.myapplication.MainActivity.id_alumno;
 
 public class AccesoAlumnos extends AppCompatActivity {
-EditText a;
-public static String id_alum,nombre_alum,contrasena;
+    TextView a;
+    public static String id_alum, nombre_alum, contrasena;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acceso_alumnos);
-        a= findViewById(R.id.nomalumno);
+        a = findViewById(R.id.nomalumno);
         Intent inten = getIntent();
         id_alum = inten.getStringExtra(id_alumno);
         sacarnombrealumno();
@@ -60,16 +63,6 @@ public static String id_alum,nombre_alum,contrasena;
 
             }
         });
-        FloatingActionButton fab4 = (FloatingActionButton) findViewById(R.id.fb4);
-        fab4.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(AccesoAlumnos.this, CalificacionesAlumno.class);
-                startActivity(intent);
-
-            }
-        });
         FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fb2);
         fab2.setOnClickListener(new View.OnClickListener() {
 
@@ -81,40 +74,42 @@ public static String id_alum,nombre_alum,contrasena;
             }
         });
     }
+
     private void sacarnombrealumno() {
 
-        AdminSQLiteOpenHelper   admin = new AdminSQLiteOpenHelper(this);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
         SQLiteDatabase basededatos = admin.getWritableDatabase();
 
 
         Cursor fila = basededatos.rawQuery("select NOMBRE_ALUMNO from ALUMNO where ALUMNO_ID='" + id_alumno + "'", null);
 
-        if(fila.moveToFirst() ) {
+        if (fila.moveToFirst()) {
             do {
-                nombre_alum  = fila.getString(fila.getColumnIndex("NOMBRE_ALUMNO"));
+                nombre_alum = fila.getString(fila.getColumnIndex("NOMBRE_ALUMNO"));
                 basededatos.close();
 
 
-            }while(fila.moveToNext());
-        }else{
+            } while (fila.moveToNext());
+        } else {
             basededatos.close();
         }
     }
-    private void indicarpwd(){
-        AdminSQLiteOpenHelper   admin = new AdminSQLiteOpenHelper(this);
+
+    private void indicarpwd() {
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
         SQLiteDatabase basededatos = admin.getWritableDatabase();
 
 
         Cursor fila = basededatos.rawQuery("select CONTRASENA_ALUMNO from ALUMNO where ALUMNO_ID='" + id_alumno + "'", null);
 
-        if(fila.moveToFirst() ) {
+        if (fila.moveToFirst()) {
             do {
-                contrasena  = fila.getString(fila.getColumnIndex("CONTRASENA_ALUMNO"));
+                contrasena = fila.getString(fila.getColumnIndex("CONTRASENA_ALUMNO"));
                 basededatos.close();
 
 
-            }while(fila.moveToNext());
-        }else{
+            } while (fila.moveToNext());
+        } else {
             basededatos.close();
         }
     }

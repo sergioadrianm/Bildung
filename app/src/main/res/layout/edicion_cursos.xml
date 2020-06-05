@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EdicionCursos"
+    tools:context="com.example.operacionesdocente.EdicionCursos"
     android:background="@color/fondo">
     <ImageButton
         android:layout_width="wrap_content"
@@ -66,12 +66,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/galeriacursos"
         android:layout_width="135dp"
         android:layout_height="142dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="168dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/b"
+        android:visibility="invisible"
+        tools:ignore="VectorDrawableCompat" />
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="172dp"
+        android:onClick="adjuntarImagen"
+        app:layout_constraintStart_toEndOf="@+id/galeriacursos"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/photo"
         tools:ignore="VectorDrawableCompat" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VisionRubricas"
+    tools:context="com.example.operacionesdocente.VisionRubricas"
     android:background="@color/fondo">
     <ImageButton
         android:layout_width="wrap_content"
@@ -18,18 +18,29 @@
         app:layout_constraintLeft_toLeftOf="parent"
  />
 
+    <ListView
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listViewRubricas"
+        >
+
+    </ListView>
+
     <Button
         android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AÑADIR"
         android:layout_marginLeft="110dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:onClick="añadirubrica"/>
     <Button
         android:id="@+id/button15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ACTUALIZAR"
+        android:onClick="actualizarub"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="30dp"/>
     <Button
@@ -38,6 +49,7 @@
         android:layout_height="wrap_content"
         android:text="BORRAR"
         android:layout_marginLeft="310dp"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:onClick="eliminarubrica"/>
 
 </RelativeLayout>

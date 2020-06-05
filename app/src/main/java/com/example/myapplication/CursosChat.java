@@ -11,12 +11,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.example.adaptadorlistview.AdaptadorListViewCurso;
+import com.example.componentead.AdminSQLiteOpenHelper;
+import com.example.pojos.Curso;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import static com.example.myapplication.MainActivity.id;
 
@@ -25,20 +24,23 @@ public class CursosChat extends AppCompatActivity {
     ArrayList<String> listaInformacion;
     ArrayList<Curso> listaCursos;
     public static String nombre;
-  public static  String nombre_curso;
+    public static String nombre_curso;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cursos_chat);
         listViewPersonas = (ListView) findViewById(R.id.listViewPersonas4);
         consultarListaPersonas();
-        ArrayAdapter adaptador = new ArrayAdapter(this,android.R.layout.simple_list_item_1,listaInformacion);
+        ArrayAdapter adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listaInformacion);
         listViewPersonas.setAdapter(adaptador);
         sacarnombre();
+        AdaptadorListViewCurso a = new AdaptadorListViewCurso(this, R.layout.adaptador_list_view_curso, listaCursos);
+        listViewPersonas.setAdapter(a);
         listViewPersonas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                nombre_curso =  listaCursos.get(position).getNombre_curso();
+                nombre_curso = listaCursos.get(position).getNombre_curso();
                 Intent ci = new Intent(CursosChat.this, MensajesDocente.class);
                 startActivity(ci);
 
@@ -48,20 +50,20 @@ public class CursosChat extends AppCompatActivity {
     }
 
     private void sacarnombre() {
-        AdminSQLiteOpenHelper   admin = new AdminSQLiteOpenHelper(this);
-        SQLiteDatabase  basededatos = admin.getWritableDatabase();
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
+        SQLiteDatabase basededatos = admin.getWritableDatabase();
 
 
         Cursor fila = basededatos.rawQuery("select NOMBRE from DOCENTE where DOCENTE_ID='" + id + "'", null);
 
-        if(fila.moveToFirst() ) {
+        if (fila.moveToFirst()) {
             do {
-                 nombre = fila.getString(fila.getColumnIndex("NOMBRE"));
+                nombre = fila.getString(fila.getColumnIndex("NOMBRE"));
                 basededatos.close();
 
 
-            }while(fila.moveToNext());
-        }else{
+            } while (fila.moveToNext());
+        } else {
             basededatos.close();
         }
     }
@@ -70,20 +72,22 @@ public class CursosChat extends AppCompatActivity {
         Intent intent = new Intent(CursosChat.this, Docentes.class);
         startActivity(intent);
     }
+
     private void consultarListaPersonas() {
-        AdminSQLiteOpenHelper   admin = new AdminSQLiteOpenHelper(this);
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this);
         SQLiteDatabase basededatos = admin.getWritableDatabase();
         Curso curso;
-        listaCursos= new ArrayList<Curso>();
+        listaCursos = new ArrayList<Curso>();
         listaInformacion = new ArrayList<>();
-        Cursor fila = basededatos.rawQuery("select * from CURSO where DOCENTE_ID = '" + id + "'" , null);
-        while (fila.moveToNext()){
-            curso=new Curso();
+        Cursor fila = basededatos.rawQuery("select * from CURSO where DOCENTE_ID = '" + id + "'", null);
+        while (fila.moveToNext()) {
+            curso = new Curso();
             curso.setCurso_id(fila.getInt(0));
-            curso.setNombre_curso(fila.getString(1));
-            curso.setDescripcion(fila.getString(2));
-            curso.setCentro_educativo_id(fila.getInt(3));
-            curso.setDocente_id(fila.getInt(4));
+            curso.setImagen_curso(fila.getBlob(1));
+            curso.setNombre_curso(fila.getString(2));
+            curso.setDescripcion(fila.getString(3));
+            curso.setCentro_educativo_id(fila.getInt(4));
+            curso.setDocente_id(fila.getInt(5));
             listaCursos.add(curso);
 
         }
@@ -91,9 +95,9 @@ public class CursosChat extends AppCompatActivity {
     }
 
     private void obtenerLista() {
-        listaInformacion= new ArrayList<String>();
+        listaInformacion = new ArrayList<String>();
 
-        for(int i=0; i<listaCursos.size();i++){
+        for (int i = 0; i < listaCursos.size(); i++) {
             listaInformacion.add(listaCursos.get(i).getNombre_curso());
         }
     }

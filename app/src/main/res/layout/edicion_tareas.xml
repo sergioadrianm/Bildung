@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EdicionTareas"
+    tools:context="com.example.operacionesdocente.EdicionTareas"
     android:background="@color/fondo">
 
 
@@ -38,6 +38,7 @@
         android:layout_marginLeft="72dp"
         android:layout_marginTop="612dp"
         android:text="MODIFICAR"
+        android:onClick="actualizarubr"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,8 +46,8 @@
         android:id="@+id/nombre_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="228dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="204dp"
         android:ems="10"
         android:hint="Nombre (Obligatorio)"
         android:inputType="textPersonName"
@@ -57,8 +58,8 @@
         android:id="@+id/instrucciones"
         android:layout_width="273dp"
         android:layout_height="137dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="264dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Instrucciones"
@@ -70,8 +71,8 @@
         android:id="@+id/switch1"
         android:layout_width="140dp"
         android:layout_height="32dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="516dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="492dp"
         android:hint="Rúbrica"
         android:onClick="crearub"
         android:textSize="18sp"
@@ -82,12 +83,27 @@
         android:id="@+id/fecha_entrega"
         android:layout_width="281dp"
         android:layout_height="28dp"
-        android:layout_marginLeft="72dp"
-        android:onClick="fecha"
-        android:layout_marginTop="440dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="412dp"
         android:hint="Selecciona la fecha de entrega:"
+        android:onClick="fecha"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nomb"
+        android:layout_width="170dp"
+        android:layout_height="33dp"
+        android:layout_marginLeft="216dp"
+        android:layout_marginTop="492dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

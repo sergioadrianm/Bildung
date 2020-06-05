@@ -10,14 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
+        <TextView
             android:id="@+id/nomalumno"
             android:layout_width="130dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="170dp"
             android:layout_marginTop="25dp"
             android:ems="10"
             android:inputType="textPersonName"
+            android:textSize="24sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
@@ -48,13 +49,6 @@
             app:fab_title="Mensajes"
             app:fab_icon="@drawable/chat"/>
 
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fb4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/white"
-            app:fab_title="Calificaciones"
-            app:fab_icon="@drawable/calificaciones"/>
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fb2"
             android:layout_width="wrap_content"

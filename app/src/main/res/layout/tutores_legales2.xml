@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".TutoresLegales2">
+    tools:context="com.example.operacionesalumnos.TutoresLegales2">
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_marginLeft="84dp"
         android:layout_marginTop="416dp"
         android:ems="10"
-        android:hint="CP (Obligatorio)"
+        android:hint="CP (obligatorio)"
         android:inputType="phone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
         android:layout_marginLeft="84dp"
         android:layout_marginTop="364dp"
         android:ems="10"
-        android:hint="Provincia (Obligatorio)"
+        android:hint="Provincia (obligatorio)"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +49,7 @@
         android:layout_marginLeft="84dp"
         android:layout_marginTop="304dp"
         android:ems="10"
-        android:hint="Localidad (Obligatorio)"
+        android:hint="Localidad (obligatorio)"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -73,7 +73,7 @@
         android:layout_marginLeft="84dp"
         android:layout_marginTop="192dp"
         android:ems="10"
-        android:hint="Calle (Obligatorio)"
+        android:hint="Calle (obligatorio)"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -85,7 +85,7 @@
         android:layout_marginLeft="84dp"
         android:layout_marginTop="132dp"
         android:ems="10"
-        android:hint="Número (Olbigatorio)"
+        android:hint="Número (obligatorio)"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

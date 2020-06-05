@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A8FF5900"
-    tools:context=".PerfilDocente">
+    tools:context="com.example.operacionesdocente.PerfilDocente">
 
     <EditText
         android:id="@+id/contrasenaper"
@@ -67,6 +67,28 @@
         android:layout_marginTop="576dp"
         android:onClick="actualizardoc"
         android:text="ACTUALIZAR"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="164dp"
+        android:text="RESTAURAR DATOS"
+        android:onClick="restore"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="96dp"
+        android:onClick="create"
+        android:text="CREAR COPIA DE SEGURIDAD"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
